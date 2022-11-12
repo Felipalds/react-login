@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import LoginForm from '../components/login/LoginForm'
 
 const Login = () => {
     
@@ -13,7 +14,7 @@ const Login = () => {
     return (
         <div>
             <h1>Faça seu login</h1>
-            <button onClick={handleClick}>Logar</button>
+            <LoginForm />
         </div>
     )
 }
