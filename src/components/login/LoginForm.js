@@ -1,23 +1,19 @@
 import React from 'react'
+import './Style.css'
+import axios from 'axios'
 
 const LoginForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        const body = {
+            email, password
+        }
+        console.log(body)
         try {
-            let res = await fetch('http://localhost:8080/login', {
-                method: "POST",
-                body: JSON.stringify({
-                    email, password
-                })
+            axios.post("http://localhost:3333/login", body).then(res => {
+                console.log(res)
             })
-            if(res.status === 200){
-                setEmail("")
-                setPassword("")
-                console.log("Request feita")
-            } else {
-                console.log("Erro ocorreu")
-            }
         } catch(e){
             console.error(e)
         }
@@ -48,7 +44,7 @@ const LoginForm = () => {
             >
             </input>
 
-            <button disabled={email.length === 0 || password.length < 6}>Entrar</button>
+            <button type="submit" disabled={email.length === 0 || password.length < 6}>Entrar</button>
         </form>
     )
 }

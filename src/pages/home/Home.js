@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { SHome } from './Styles'
 
 const Home = () => {
+
+  const professionals = ['zoz', 'kamis', 'guanabara']
+  
+
   return (
     <SHome>
         <h1>Home do site</h1>
@@ -11,6 +15,14 @@ const Home = () => {
           <li><Link to="professionals/gustavo"> Gustavao do CSS </Link></li>
           <li><Link to="professionals/zoz">Zoz do Pitoon </Link></li>
         </ul>
+
+        {
+          professionals.map(professional => {
+            return (<h1>
+              Profissioan ltop: {professional}
+            </h1>)
+          })
+        }
     </SHome>
   )
 }
